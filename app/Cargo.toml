@@ -1,0 +1,15 @@
+[package]
+name = "sph-app"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+sph-shared = { path = "../shared" }
+wgpu = { version = "22", features = ["spirv"] }
+bytemuck = { version = "1", features = ["derive"] }
+glam = { version = "0.34", features = ["bytemuck"] }
+pollster = "0.4"
+env_logger = "0.11"
+
+[build-dependencies]
+spirv-builder = { git = "https://github.com/Rust-GPU/rust-gpu", branch = "main" }

@@ -1,0 +1,12 @@
+[package]
+name = "sph-shader"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+sph-shared = { path = "../shared" }
+spirv-std = { git = "https://github.com/Rust-GPU/rust-gpu", branch = "main", features = ["glam_0_34"] }
+glam = { version = "0.34", default-features = false, features = ["libm"] }
