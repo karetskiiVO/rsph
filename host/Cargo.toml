@@ -1,0 +1,17 @@
+[package]
+name = "host"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+khal = "0.4.0"
+include_dir = "0.7"
+pollster = "0.4"
+shaders = { path = "../shaders" }
+# Выберите один из бэкендов:
+# khal = { version = "0.3.0", features = ["webgpu"] }  # по умолчанию
+# khal = { version = "0.3.0", features = ["cuda"] }
+# khal = { version = "0.3.0", features = ["cpu"] }
+
+[build-dependencies]
+khal-builder = "0.3.0"
