@@ -1,3 +1,7 @@
-[workspace]
-members = ["shaders", "host"]
-resolver = "2"
+[package]
+name = "rsph"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rsp_lib = { package = "rsph-lib", path = "lib/rsph" }
