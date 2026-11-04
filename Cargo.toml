@@ -1,3 +1,4 @@
 [workspace]
-members = ["shaders", "host"]
+members = ["main", "lib/rsph"]
+exclude = ["lib/rsph.genered"]
 resolver = "2"
