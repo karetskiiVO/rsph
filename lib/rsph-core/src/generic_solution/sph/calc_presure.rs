@@ -6,7 +6,7 @@ pub fn calc_presure<D, P, M>(model: &M, particle: &mut P)
 where
     D: SphDomain,
     P: SphParticle<D> + ?Sized,
-    M: SphModel<D> + ?Sized,
+    M: SphModel<D, P> + ?Sized,
 {
     let pressure = model.equation_of_state().pressure(
         particle.rest_mass_density(),

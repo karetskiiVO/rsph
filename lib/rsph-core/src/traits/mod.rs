@@ -1,5 +1,3 @@
-mod build_runtime;
-mod device;
 mod equation_of_state;
 mod model;
 mod particle;
@@ -10,8 +8,6 @@ mod spacetime_geometry;
 mod sqrt;
 mod zero;
 
-pub use build_runtime::BuildRuntime;
-pub use device::Device;
 pub use equation_of_state::EquationOfState;
 pub use model::{Model, RelativisticModel, SphModel};
 pub use particle::{Particle, RelativisticSphParticle, SphParticle};

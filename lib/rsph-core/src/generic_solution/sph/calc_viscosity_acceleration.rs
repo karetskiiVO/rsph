@@ -17,7 +17,7 @@ pub fn calc_viscosity_acceleration<D, P, M, V>(
 ) where
     D: SphDomain,
     P: SphParticle<D> + ?Sized,
-    M: Model<D> + ?Sized,
+    M: Model<D, P> + ?Sized,
     M::Kernel: ViscosityKernel<D>,
     V: Div<D::Density>,
     <V as Div<D::Density>>::Output: Div<D::Density>,

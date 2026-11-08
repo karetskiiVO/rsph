@@ -3,11 +3,8 @@ use crate::traits::{
     RelativisticSphParticle, SmoothingKernel, SpacetimeGeometry, SphDomain, SphParticle,
 };
 
-/// Associates a particle representation and a smoothing kernel in one domain.
-pub trait Model<D: PhysicsDomain> {
-    /// Particle storage/access type compatible with this physical domain.
-    type Particle: Particle<D>;
-
+/// Configures a smoothing kernel for particles of type `P` in domain `D`.
+pub trait Model<D: PhysicsDomain, P: Particle<D> + ?Sized> {
     /// Kernel using the same domain and distance convention as the model.
     type Kernel: SmoothingKernel<D>;
 
@@ -19,7 +16,7 @@ pub trait Model<D: PhysicsDomain> {
 }
 
 /// SPH particle capability and thermal EOS, with the kernel inherited from Model.
-pub trait SphModel<D: SphDomain>: Model<D, Particle: SphParticle<D>> {
+pub trait SphModel<D: SphDomain, P: SphParticle<D> + ?Sized>: Model<D, P> {
     /// Thermal EOS using the same rest-mass and energy units as the particles.
     type EquationOfState: EquationOfState<D>;
 
@@ -29,8 +26,8 @@ pub trait SphModel<D: SphDomain>: Model<D, Particle: SphParticle<D>> {
 
 /// Relativistic SPH model with compatible geometry, EOS and primitive recovery.
 /// Integration and device execution are separate contracts.
-pub trait RelativisticModel<D: RelativisticDomain>:
-    SphModel<D, Particle: RelativisticSphParticle<D>>
+pub trait RelativisticModel<D: RelativisticDomain, P: RelativisticSphParticle<D> + ?Sized>:
+    SphModel<D, P>
 {
     /// Geometry and coordinate convention used by this model.
     type Geometry: SpacetimeGeometry<D>;

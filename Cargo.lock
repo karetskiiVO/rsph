@@ -33,6 +33,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "rsph-cpu"
+version = "0.1.0"
+dependencies = [
+ "rsph-lib",
+]
+
+[[package]]
 name = "rsph-lib"
 version = "0.1.0"
 dependencies = [

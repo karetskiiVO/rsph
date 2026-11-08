@@ -8,7 +8,7 @@ pub fn update_density<D, P, M>(model: &M, particle: &mut P, neightbour: &P)
 where
     D: SphDomain,
     P: SphParticle<D> + ?Sized,
-    M: Model<D> + ?Sized,
+    M: Model<D, P> + ?Sized,
     D::Mass: Mul<<M::Kernel as SmoothingKernel<D>>::Value, Output = D::Density>,
     D::Density: Add<Output = D::Density>,
 {

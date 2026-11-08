@@ -1,14 +1,12 @@
 use std::marker::PhantomData;
 
-use crate::traits::{Device, Model, PhysicsDomain};
+use rsph_core::traits::{Model, Particle, PhysicsDomain};
 
-pub struct Config<
-    PhD: PhysicsDomain,
-    D: Device,
-    M: Model<PhD>,
-> {
+use crate::traits::Device;
+
+pub struct Config<PhD: PhysicsDomain, D: Device, M: Model<PhD, P>, P: Particle<PhD>> {
     pub device: D,
+    pub model: M,
 
-    _phd: PhantomData<PhD>,
-    _m:   PhantomData<M>,
+    _types: PhantomData<(PhD, fn() -> P)>,
 }

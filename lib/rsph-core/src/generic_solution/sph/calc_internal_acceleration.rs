@@ -13,7 +13,7 @@ pub fn calc_internal_acceleration<D, P, M>(model: &M, particle: &mut P, neighbou
 where
     D: SphDomain,
     P: SphParticle<D> + ?Sized,
-    M: Model<D> + ?Sized,
+    M: Model<D, P> + ?Sized,
     D::Pressure: Div<D::Density>,
     PressureOverDensity<D>: Div<D::Density>,
     PressureOverDensitySquared<D>: Add<Output = PressureOverDensitySquared<D>>,
