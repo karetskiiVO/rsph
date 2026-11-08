@@ -5,6 +5,12 @@ use std::ops::{Div, Mul};
 #[derive(Clone, Copy, Debug, Default, PartialEq, PartialOrd)]
 pub struct Time<T>(pub T);
 
+impl<T> From<T> for Time<T> {
+    fn from(value: T) -> Self {
+        Self(value)
+    }
+}
+
 /// Mass value with an explicit scalar representation.
 #[repr(transparent)]
 #[derive(Clone, Copy, Debug, Default, PartialEq, PartialOrd)]

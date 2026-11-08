@@ -7,6 +7,7 @@ mod physics_domain;
 mod primitive_recovery;
 mod smoothing_kernel;
 mod spacetime_geometry;
+mod sqrt;
 mod zero;
 
 pub use build_runtime::BuildRuntime;
@@ -18,4 +19,5 @@ pub use physics_domain::{NewtonianDomain, PhysicsDomain, RelativisticDomain, Sph
 pub use primitive_recovery::{ConservativeVariables, PrimitiveRecovery, PrimitiveVariables};
 pub use smoothing_kernel::{SmoothingKernel, ViscosityKernel};
 pub use spacetime_geometry::SpacetimeGeometry;
+pub use sqrt::Sqrt;
 pub use zero::Zero;

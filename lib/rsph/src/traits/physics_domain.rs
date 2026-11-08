@@ -1,15 +1,21 @@
 use std::ops::{Add, Div, Mul, Sub};
 
-use crate::traits::Zero;
+use crate::traits::{Sqrt, Zero};
 
 /// Physical quantities and arithmetic available to a simulation model.
 /// Implementations maintain consistent units and valid numerical states.
 pub trait PhysicsDomain {
     /// A duration used for time steps and rates of change.
-    type Time: Copy;
+    type Time: Copy + PartialOrd + From<Self::Length>;
 
     /// A scalar length for spatial scales, distances and smoothing kernels.
-    type Length: Copy;
+    type Length: Copy
+        + PartialOrd
+        + Zero
+        + Add<Output = Self::Length>
+        + Div<Output = Self::Length>
+        + Mul<Output = Self::Length>
+        + Sqrt<Output = Self::Length>;
 
     /// The mass representation; SPH particles use it for baryonic rest mass.
     type Mass: Copy;
