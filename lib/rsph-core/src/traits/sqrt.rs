@@ -7,13 +7,13 @@ pub trait Sqrt {
 impl Sqrt for f32 {
     type Output = Self;
     fn sqrt(self) -> Self {
-        f32::sqrt(self)
+        libm::sqrtf(self)
     }
 }
 
 impl Sqrt for f64 {
     type Output = Self;
     fn sqrt(self) -> Self {
-        f64::sqrt(self)
+        libm::sqrt(self)
     }
 }

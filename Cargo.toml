@@ -1,4 +1,4 @@
 [workspace]
-members = ["main", "lib/rsph"]
+members = ["main", "lib/rsph", "lib/rsph-core"]
 exclude = ["lib/rsph.genered"]
 resolver = "2"

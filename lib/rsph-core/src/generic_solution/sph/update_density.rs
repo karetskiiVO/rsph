@@ -1,4 +1,4 @@
-use std::ops::{Add, Mul};
+use core::ops::{Add, Mul};
 
 use crate::traits::{Model, SmoothingKernel, SphDomain, SphParticle};
 

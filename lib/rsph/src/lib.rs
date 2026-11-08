@@ -1,5 +1,3 @@
-pub mod traits;
-pub mod quantities;
-pub mod generic_solution;
-
 pub mod config;
+
+pub use rsph_core::{generic_solution, quantities, traits};

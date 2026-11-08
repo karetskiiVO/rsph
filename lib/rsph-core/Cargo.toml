@@ -1,0 +1,8 @@
+[package]
+name = "rsph-core"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+glam = { version = "0.33.12", default-features = false, features = ["all-types", "nostd-libm"] }
+libm = { version = "0.2", default-features = false }

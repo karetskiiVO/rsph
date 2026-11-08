@@ -1,4 +1,4 @@
-use std::ops::{Div, Mul};
+use core::ops::{Div, Mul};
 
 /// Time value with an explicit scalar representation.
 #[repr(transparent)]
