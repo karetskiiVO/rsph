@@ -1,0 +1,16 @@
+{
+    "name": "rsph",
+    "description": "Generic smoothed particle hydrodynamics routines.",
+    "targetPath": "target",
+    "configurations": [
+        {
+            "name": "application",
+            "targetType": "executable",
+            "mainSourceFile": "app/app.d"
+        },
+        {
+            "name": "library",
+            "targetType": "library"
+        }
+    ]
+}
